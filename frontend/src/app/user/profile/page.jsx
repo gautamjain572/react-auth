@@ -1,7 +1,9 @@
 "use client"
 import { useGetUserQuery } from "@/lib/services/auth";
 import { useEffect, useState } from "react";
+
 const Profile = () => {
+  
   const [user, setUser] = useState({})
   const { data, isSuccess } = useGetUserQuery()
   useEffect(() => {
@@ -9,6 +11,7 @@ const Profile = () => {
       setUser(data.user)
     }
   }, [data, isSuccess])
+
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
